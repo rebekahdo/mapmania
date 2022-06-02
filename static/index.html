@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Node on Azure</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Map Mania</title>
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-<h1>Node.js and Express Hosted on Microsoft Azure Template</h1>
-<p>This repository serves as a template that can be used to create a Node.js and Express based website that can easily
-be hosted on Microsoft Azure.</p>
-
-Additional application functionality includes:<br />
-<a href="fetching-from-server.html">Accessing Node.js Server-Side Application Programming Interfaces (APIs)</a><br />
-<a href="fetching-remote-dog-breeds.html">Accessing Remote Application Programming Interfaces (APIs)</a>
+    <h1>Map Mania</h1>
+    <div id="map"></div>
+    <script>
+        function initMap(){
+            var options = {
+                zoom:8,
+                center:{lat:42.3601,lng:-71.0589}
+            }
+            var map = new google.maps.Map(document.getElementByID('map'), options);
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz05i9KZC1t6pKFnLX68h4okH0sP7mNrw&callback=initMap">    </script>
+    
 </body>
 </html>
